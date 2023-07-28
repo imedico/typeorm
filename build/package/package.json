@@ -14,16 +14,16 @@
   },
   "exports": {
     ".": {
-      "types": "./index.d.ts",
+      "types": "./build/package/index.d.ts",
       "node": {
-        "import": "./index.mjs",
-        "require": "./index.js",
-        "types": "./index.d.ts"
+        "import": "./build/package/index.mjs",
+        "require": "./build/package/index.js",
+        "types": "./build/package/index.d.ts"
       },
       "browser": {
-        "require": "./index.js",
-        "import": "./browser/index.js",
-        "default": "./index.js"
+        "require": "./build/package/index.js",
+        "import": "./build/browser/index.js",
+        "default": "./build/package/index.js"
       }
     },
     "./browser": {
@@ -36,9 +36,9 @@
       "import": "./*"
     }
   },
-  "main": "./index.js",
-  "module": "./index.mjs",
-  "types": "./index.d.ts",
+  "main": "./build/package/index.js",
+  "module": "./build/package/index.mjs",
+  "types": "./build/package/index.d.ts",
   "browser": {
     "./browser/connection/ConnectionOptionsReader.js": "./browser/platform/BrowserConnectionOptionsReaderDummy.js",
     "./browser/connection/options-reader/ConnectionOptionsXmlReader.js": "./browser/platform/BrowserConnectionOptionsReaderDummy.js",
