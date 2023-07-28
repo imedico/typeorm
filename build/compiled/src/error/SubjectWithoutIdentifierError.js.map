@@ -1,0 +1,1 @@
+{"version":3,"file":"SubjectWithoutIdentifierError.js","sourceRoot":"","sources":["../../../../src/error/SubjectWithoutIdentifierError.ts"],"names":[],"mappings":";;;AACA,iDAA6C;AAE7C;;;;GAIG;AACH,MAAa,6BAA8B,SAAQ,2BAAY;IAC3D,YAAY,OAAgB;QACxB,KAAK,CACD,2BAA2B,OAAO,CAAC,QAAQ,CAAC,UAAU,gDAAgD,CACzG,CAAA;IACL,CAAC;CACJ;AAND,sEAMC"}

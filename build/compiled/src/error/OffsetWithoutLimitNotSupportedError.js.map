@@ -1,0 +1,1 @@
+{"version":3,"file":"OffsetWithoutLimitNotSupportedError.js","sourceRoot":"","sources":["../../../../src/error/OffsetWithoutLimitNotSupportedError.ts"],"names":[],"mappings":";;;AAAA,iDAA6C;AAE7C;;GAEG;AACH,MAAa,mCAAoC,SAAQ,2BAAY;IACjE;QACI,KAAK,CACD,0FAA0F;YACtF,yFAAyF;YACzF,oBAAoB,CAC3B,CAAA;IACL,CAAC;CACJ;AARD,kFAQC"}

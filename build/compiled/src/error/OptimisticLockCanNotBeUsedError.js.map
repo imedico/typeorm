@@ -1,0 +1,1 @@
+{"version":3,"file":"OptimisticLockCanNotBeUsedError.js","sourceRoot":"","sources":["../../../../src/error/OptimisticLockCanNotBeUsedError.ts"],"names":[],"mappings":";;;AAAA,iDAA6C;AAE7C;;GAEG;AACH,MAAa,+BAAgC,SAAQ,2BAAY;IAC7D;QACI,KAAK,CAAC,4DAA4D,CAAC,CAAA;IACvE,CAAC;CACJ;AAJD,0EAIC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"PrimaryColumnCannotBeNullableError.js","sourceRoot":"","sources":["../../../../src/error/PrimaryColumnCannotBeNullableError.ts"],"names":[],"mappings":";;;AAAA,iDAA6C;AAE7C,MAAa,kCAAmC,SAAQ,2BAAY;IAChE,YAAY,MAAc,EAAE,YAAoB;QAC5C,KAAK,CACD,kBACU,MAAM,CAAC,WAAY,CAAC,IAC9B,IAAI,YAAY,uBAAuB;YACnC,kEAAkE,CACzE,CAAA;IACL,CAAC;CACJ;AATD,gFASC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"CircularRelationsError.js","sourceRoot":"","sources":["../../../../src/error/CircularRelationsError.ts"],"names":[],"mappings":";;;AAAA,iDAA6C;AAE7C;;GAEG;AACH,MAAa,sBAAuB,SAAQ,2BAAY;IACpD,YAAY,IAAY;QACpB,KAAK,CACD,gCAAgC,IAAI,sCAAsC;YACtE,4DAA4D,CACnE,CAAA;IACL,CAAC;CACJ;AAPD,wDAOC"}

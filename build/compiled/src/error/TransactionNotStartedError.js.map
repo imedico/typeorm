@@ -1,0 +1,1 @@
+{"version":3,"file":"TransactionNotStartedError.js","sourceRoot":"","sources":["../../../../src/error/TransactionNotStartedError.ts"],"names":[],"mappings":";;;AAAA,iDAA6C;AAE7C;;GAEG;AACH,MAAa,0BAA2B,SAAQ,2BAAY;IACxD;QACI,KAAK,CACD,yFAAyF,CAC5F,CAAA;IACL,CAAC;CACJ;AAND,gEAMC"}

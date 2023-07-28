@@ -1,0 +1,1 @@
+{"version":3,"file":"test-transformer.js","sourceRoot":"","sources":["../../../../../test/other-issues/hstore-allow-transformer/test-transformer.ts"],"names":[],"mappings":";;;AAAa,QAAA,eAAe,GAAG;IAC3B,EAAE,CAAC,IAAS;QACR,OAAO,IAAI,CAAA;IACf,CAAC;IACD,IAAI,CAAC,IAAS;QACV,OAAO,IAAI,CAAC,KAAK,CAAA;IACrB,CAAC;CACJ,CAAA"}
