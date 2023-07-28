@@ -1,6 +1,6 @@
 {
   "name": "typeorm",
-  "private": true,
+  "private": false,
   "version": "0.3.16",
   "description": "Data-Mapper ORM for TypeScript, ES7, ES6, ES5. Supports MySQL, PostgreSQL, MariaDB, SQLite, MS SQL Server, Oracle, MongoDB databases.",
   "license": "MIT",
@@ -14,16 +14,16 @@
   },
   "exports": {
     ".": {
-      "types": "./build/package/index.d.ts",
+      "types": "./index.d.ts",
       "node": {
-        "import": "./build/package/index.mjs",
-        "require": "./build/package/index.js",
-        "types": "./build/package/index.d.ts"
+        "import": "./index.mjs",
+        "require": "./index.js",
+        "types": "./index.d.ts"
       },
       "browser": {
-        "require": "./build/package/index.js",
-        "import": "./build/package/browser/index.js",
-        "default": "./build/package/index.js"
+        "require": "./index.js",
+        "import": "./browser/index.js",
+        "default": "./index.js"
       }
     },
     "./browser": {
@@ -36,9 +36,9 @@
       "import": "./*"
     }
   },
-  "main": "./build/package/index.js",
-  "module": "./build/package/index.mjs",
-  "types": "./build/package/index.d.ts",
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
   "browser": {
     "./browser/connection/ConnectionOptionsReader.js": "./browser/platform/BrowserConnectionOptionsReaderDummy.js",
     "./browser/connection/options-reader/ConnectionOptionsXmlReader.js": "./browser/platform/BrowserConnectionOptionsReaderDummy.js",
