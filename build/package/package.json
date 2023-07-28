@@ -22,7 +22,7 @@
       },
       "browser": {
         "require": "./build/package/index.js",
-        "import": "./build/browser/index.js",
+        "import": "./build/package/browser/index.js",
         "default": "./build/package/index.js"
       }
     },
