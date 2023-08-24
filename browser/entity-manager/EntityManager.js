@@ -503,9 +503,13 @@ export class EntityManager {
     }
     async callAggregateFun(entityClass, fnName, columnName, where = {}) {
         const metadata = this.connection.getMetadata(entityClass);
+        const column = metadata.columns.find((item) => item.propertyPath === columnName);
+        if (!column) {
+            throw new TypeORMError(`Column "${columnName}" was not found in table "${metadata.name}"`);
+        }
         const result = await this.createQueryBuilder(entityClass, metadata.name)
             .setFindOptions({ where })
-            .select(`${fnName}(${this.connection.driver.escape(String(columnName))})`, fnName)
+            .select(`${fnName}(${this.connection.driver.escape(column.databaseName)})`, fnName)
             .getRawOne();
         return result[fnName] === null ? null : parseFloat(result[fnName]);
     }

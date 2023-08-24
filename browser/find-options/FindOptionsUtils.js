@@ -300,7 +300,7 @@ export class FindOptionsUtils {
     static joinEagerRelations(qb, alias, metadata) {
         metadata.eagerRelations.forEach((relation) => {
             // generate a relation alias
-            let relationAlias = DriverUtils.buildAlias(qb.connection.driver, { joiner: "__" }, alias, relation.propertyPath);
+            let relationAlias = DriverUtils.buildAlias(qb.connection.driver, { joiner: "__" }, alias, relation.propertyName);
             // add a join for the relation
             // Checking whether the relation wasn't joined yet.
             let addJoin = true;

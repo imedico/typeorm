@@ -1124,6 +1124,7 @@ class SelectQueryBuilder extends QueryBuilder_1.QueryBuilder {
         // qb.select("category")
         //     .leftJoinAndSelect("category.post", "post");
         const joins = this.expressionMap.joinAttributes.map((joinAttr) => {
+            var _a;
             const relation = joinAttr.relation;
             const destinationTableName = joinAttr.tablePath;
             const destinationTableAlias = joinAttr.alias.name;
@@ -1168,7 +1169,9 @@ class SelectQueryBuilder extends QueryBuilder_1.QueryBuilder {
                     joinAttr.direction +
                     " JOIN " +
                     this.getTableName(destinationTableName) +
-                    " " +
+                    `${((_a = joinAttr.metadata) === null || _a === void 0 ? void 0 : _a.versioning)
+                        ? " FOR SYSTEM_TIME AS OF :timestamp "
+                        : " "}` +
                     this.escape(destinationTableAlias) +
                     this.createTableLockExpression() +
                     " ON " +

@@ -316,17 +316,21 @@ class Repository {
     /**
      * Extends repository with provided functions.
      */
-    extend(custom) {
+    extend(customs) {
         // return {
         //     ...this,
         //     ...custom
         // };
         const thisRepo = this.constructor;
         const { target, manager, queryRunner } = this;
-        const cls = new (class extends thisRepo {
-        })(target, manager, queryRunner);
-        Object.assign(cls, custom);
-        return cls;
+        const ChildClass = class extends thisRepo {
+            constructor(target, manager, queryRunner) {
+                super(target, manager, queryRunner);
+            }
+        };
+        for (const custom in customs)
+            ChildClass.prototype[custom] = customs[custom];
+        return new ChildClass(target, manager, queryRunner);
     }
 }
 exports.Repository = Repository;

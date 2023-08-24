@@ -19,6 +19,11 @@ class MigrationGenerateCommand {
     }
     builder(args) {
         return args
+            .positional("path", {
+            type: "string",
+            describe: "Path of the migration file",
+            demandOption: true,
+        })
             .option("dataSource", {
             alias: "d",
             type: "string",

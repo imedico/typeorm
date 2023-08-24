@@ -532,7 +532,7 @@ class QueryBuilder {
         // In some dialects query nesting is available - but not all.  Because of this, we'll need
         // to scrub "ending" characters from the SQL but otherwise we can leave everything else
         // as-is and it should be valid.
-        return `/* ${this.expressionMap.comment.replace("*/", "")} */ `;
+        return `/* ${this.expressionMap.comment.replace(/\*\//g, "")} */ `;
     }
     /**
      * Time travel queries for CockroachDB

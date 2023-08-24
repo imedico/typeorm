@@ -317,5 +317,5 @@ export declare class Repository<Entity extends ObjectLiteral> {
     /**
      * Extends repository with provided functions.
      */
-    extend<CustomRepository>(custom: CustomRepository & ThisType<this & CustomRepository>): this & CustomRepository;
+    extend<CustomRepository>(customs: CustomRepository & ThisType<this & CustomRepository>): this & CustomRepository;
 }

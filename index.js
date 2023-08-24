@@ -121,6 +121,7 @@ tslib_1.__exportStar(require("./schema-builder/table/TableForeignKey"), exports)
 tslib_1.__exportStar(require("./schema-builder/table/TableIndex"), exports);
 tslib_1.__exportStar(require("./schema-builder/table/TableUnique"), exports);
 tslib_1.__exportStar(require("./schema-builder/table/Table"), exports);
+tslib_1.__exportStar(require("./schema-builder/view/View"), exports);
 tslib_1.__exportStar(require("./schema-builder/options/TableCheckOptions"), exports);
 tslib_1.__exportStar(require("./schema-builder/options/TableColumnOptions"), exports);
 tslib_1.__exportStar(require("./schema-builder/options/TableExclusionOptions"), exports);

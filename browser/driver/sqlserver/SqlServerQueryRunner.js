@@ -2387,6 +2387,7 @@ export class SqlServerQueryRunner extends BaseQueryRunner {
      * Converts MssqlParameter into real mssql parameter type.
      */
     mssqlParameterToNativeParameter(parameter) {
+        var _a, _b, _c;
         switch (this.driver.normalizeType({ type: parameter.type })) {
             case "bit":
                 return this.driver.mssql.Bit;
@@ -2411,12 +2412,24 @@ export class SqlServerQueryRunner extends BaseQueryRunner {
             case "tinyint":
                 return this.driver.mssql.TinyInt;
             case "char":
+                if ((_a = this.driver.options.options) === null || _a === void 0 ? void 0 : _a.disableAsciiToUnicodeParamConversion) {
+                    return this.driver.mssql.Char(...parameter.params);
+                }
+                return this.driver.mssql.NChar(...parameter.params);
             case "nchar":
                 return this.driver.mssql.NChar(...parameter.params);
             case "text":
+                if ((_b = this.driver.options.options) === null || _b === void 0 ? void 0 : _b.disableAsciiToUnicodeParamConversion) {
+                    return this.driver.mssql.Text;
+                }
+                return this.driver.mssql.Ntext;
             case "ntext":
                 return this.driver.mssql.Ntext;
             case "varchar":
+                if ((_c = this.driver.options.options) === null || _c === void 0 ? void 0 : _c.disableAsciiToUnicodeParamConversion) {
+                    return this.driver.mssql.VarChar(...parameter.params);
+                }
+                return this.driver.mssql.NVarChar(...parameter.params);
             case "nvarchar":
                 return this.driver.mssql.NVarChar(...parameter.params);
             case "xml":
