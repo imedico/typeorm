@@ -101,7 +101,7 @@ export class Broadcaster {
         const broadcastFunction = this[`broadcast${event}Event` as keyof this]
 
         if (typeof broadcastFunction === "function") {
-            ;(broadcastFunction as any).call(this, result, ...args)
+            (broadcastFunction as any).call(this, result, ...args)
         }
 
         await result.wait()

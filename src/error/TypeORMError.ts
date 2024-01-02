@@ -11,7 +11,7 @@ export class TypeORMError extends Error {
         if (Object.setPrototypeOf) {
             Object.setPrototypeOf(this, new.target.prototype)
         } else {
-            ;(this as any).__proto__ = new.target.prototype
+            (this as any).__proto__ = new.target.prototype
         }
     }
 }
