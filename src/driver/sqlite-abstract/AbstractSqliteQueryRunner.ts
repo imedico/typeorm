@@ -19,6 +19,7 @@ import { TableExclusion } from "../../schema-builder/table/TableExclusion"
 import { TransactionAlreadyStartedError, TypeORMError } from "../../error"
 import { MetadataTableType } from "../types/MetadataTableType"
 import { InstanceChecker } from "../../util/InstanceChecker"
+import { EntityMetadata } from "../../metadata/EntityMetadata"
 
 /**
  * Runs queries on a single sqlite database connection.
@@ -1372,7 +1373,7 @@ export abstract class AbstractSqliteQueryRunner
                 // find column name with auto increment
                 let autoIncrementColumnName: string | undefined = undefined
                 const tableSql: string = dbTable["sql"]
-                let autoIncrementIndex = tableSql
+                const autoIncrementIndex = tableSql
                     .toUpperCase()
                     .indexOf("AUTOINCREMENT")
                 if (autoIncrementIndex !== -1) {
@@ -1463,16 +1464,16 @@ export abstract class AbstractSqliteQueryRunner
                         }
 
                         // parse datatype and attempt to retrieve length, precision and scale
-                        let pos = tableColumn.type.indexOf("(")
+                        const pos = tableColumn.type.indexOf("(")
                         if (pos !== -1) {
                             const fullType = tableColumn.type
-                            let dataType = fullType.substr(0, pos)
+                            const dataType = fullType.substr(0, pos)
                             if (
                                 this.driver.withLengthColumnTypes.find(
                                     (col) => col === dataType,
                                 )
                             ) {
-                                let len = parseInt(
+                                const len = parseInt(
                                     fullType.substring(
                                         pos + 1,
                                         fullType.length - 1,
@@ -1730,7 +1731,7 @@ export abstract class AbstractSqliteQueryRunner
             table.name,
         )} (${columnDefinitions}`
 
-        let [databaseNew, tableName] = this.splitTablePath(table.name)
+        const [databaseNew, tableName] = this.splitTablePath(table.name)
         const newTableName = temporaryTable
             ? `${databaseNew ? `${databaseNew}.` : ""}${tableName.replace(
                   /^temporary_/,
@@ -1936,7 +1937,7 @@ export abstract class AbstractSqliteQueryRunner
      * Builds drop index sql.
      */
     protected dropIndexSql(indexOrName: TableIndex | string): Query {
-        let indexName = InstanceChecker.isTableIndex(indexOrName)
+        const indexName = InstanceChecker.isTableIndex(indexOrName)
             ? indexOrName.name
             : indexOrName
         return new Query(`DROP INDEX ${this.escapePath(indexName!)}`)
@@ -2001,7 +2002,7 @@ export abstract class AbstractSqliteQueryRunner
 
         // change table name into 'temporary_table'
         let [databaseNew, tableNameNew] = this.splitTablePath(newTable.name)
-        let [, tableNameOld] = this.splitTablePath(oldTable.name)
+        const [, tableNameOld] = this.splitTablePath(oldTable.name)
         newTable.name = tableNameNew = `${
             databaseNew ? `${databaseNew}.` : ""
         }temporary_${tableNameNew}`
@@ -2249,6 +2250,13 @@ export abstract class AbstractSqliteQueryRunner
     changeTableComment(
         tableOrName: Table | string,
         comment?: string,
+    ): Promise<void> {
+        throw new TypeORMError(`sqlit driver does not support change comment.`)
+    }
+
+    changeTableVersioning(
+        table: Table,
+        metadata: EntityMetadata,
     ): Promise<void> {
         throw new TypeORMError(`sqlit driver does not support change comment.`)
     }

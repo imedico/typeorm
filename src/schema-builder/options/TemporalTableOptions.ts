@@ -23,5 +23,5 @@ export interface TemporalTableOptions {
      * The system uses the history table to automatically store the previous version of the row each time a
      * row in the temporal table gets updated or deleted.
      */
-    historyTable?: string
+    historyTable: string
 }

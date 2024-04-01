@@ -8,6 +8,7 @@ import {
 import { Photo } from "./Photo"
 
 @Entity({
+    name: "user",
     versioning: {
         validFrom: "valid_from",
         validTo: "valid_to",

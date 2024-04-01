@@ -8,6 +8,7 @@ import { ReplicationMode } from "../types/ReplicationMode"
 import { QueryResult } from "../../query-runner/QueryResult"
 import { Table } from "../../schema-builder/table/Table"
 import { TypeORMError } from "../../error"
+import { EntityMetadata } from "../../metadata/EntityMetadata"
 
 class PostgresQueryRunnerWrapper extends PostgresQueryRunner {
     driver: any
@@ -207,5 +208,12 @@ export class AuroraPostgresQueryRunner
         throw new TypeORMError(
             `aurora-postgres driver does not support change comment.`,
         )
+    }
+
+    changeTableVersioning(
+        table: Table,
+        metadata: EntityMetadata,
+    ): Promise<void> {
+        throw new TypeORMError(`sqlit driver does not support change comment.`)
     }
 }

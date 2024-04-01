@@ -526,7 +526,7 @@ export class EntityMetadata {
      * The value 'true' enables system versioning. You can also customize each option like
      * start row column, history table, etc.
      */
-    versioning?: TemporalTableOptions
+    versioning?: TemporalTableOptions | boolean
 
     // ---------------------------------------------------------------------
     // Constructor
@@ -554,6 +554,35 @@ export class EntityMetadata {
         this.expression = this.tableMetadataArgs.expression
         this.withoutRowid = this.tableMetadataArgs.withoutRowid
         this.dependsOn = this.tableMetadataArgs.dependsOn
+        this.versioning = this.tableMetadataArgs.versioning
+
+        // let
+
+        //  if (this.tableMetadataArgs.versioning === true) {
+        /*   const { schema, name, versioning } = options.args
+        const historyTable = schema
+            ? `${schema}.${name}_temporal_history`
+            : `${name}_temporal_history`
+        const validFrom =
+            typeof versioning === "boolean" || !versioning?.validFrom
+                ? "row_start"
+                : versioning?.validFrom
+        const validTo =
+            typeof versioning === "boolean" || !versioning?.validTo
+                ? "row_end"
+                : versioning?.validTo
+        // const { validFrom, validTo } = this.tableMetadataArgs.versioning
+
+        // Default values
+        this.versioning = {
+            historyTable,
+            validFrom,
+            validTo,
+        }
+        */
+        //  } else {
+        //         this.versioning = this.tableMetadataArgs.versioning
+        // }
     }
 
     // -------------------------------------------------------------------------
@@ -1076,7 +1105,7 @@ export class EntityMetadata {
 
         this.comment = this.tableMetadataArgs.comment
 
-        this.versioning = this.tableMetadataArgs.versioning
+        //  this.versioning = this.tableMetadataArgs.versioning
     }
 
     /**

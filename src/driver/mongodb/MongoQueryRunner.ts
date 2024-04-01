@@ -13,7 +13,7 @@ import { Broadcaster } from "../../subscriber/Broadcaster"
 import { TableCheck } from "../../schema-builder/table/TableCheck"
 import { TableExclusion } from "../../schema-builder/table/TableExclusion"
 import { TypeORMError } from "../../error"
-
+import { EntityMetadata } from "../../metadata/EntityMetadata"
 import {
     BulkWriteResult,
     AggregationCursor,
@@ -1274,5 +1274,12 @@ export class MongoQueryRunner implements QueryRunner {
         throw new TypeORMError(
             `mongodb driver does not support change table comment.`,
         )
+    }
+
+    changeTableVersioning(
+        table: Table,
+        metadata: EntityMetadata,
+    ): Promise<void> {
+        throw new TypeORMError(`sqlit driver does not support change comment.`)
     }
 }

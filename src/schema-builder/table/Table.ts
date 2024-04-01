@@ -93,7 +93,7 @@ export class Table {
      * The value 'true' enables system versioning. You can also customize each option like
      * start row column, history table, etc.
      */
-    versioning: TemporalTableOptions
+    versioning?: TemporalTableOptions | boolean
 
     // -------------------------------------------------------------------------
     // Constructor
@@ -152,17 +152,22 @@ export class Table {
 
             this.comment = options.comment
 
-            if (options.versioning) {
-                if (options.versioning === true) {
-                    // Default values
-                    this.versioning = {
-                        validFrom: "row_start",
-                        validTo: "row_end",
-                    }
-                } else {
-                    this.versioning = options.versioning
-                }
-            }
+            this.versioning = options.versioning
+
+            //    if (options.versioning) {
+            //      if (options.versioning === true) {
+            // Default values
+            //        this.versioning = {
+            //            historyTable: options.schema
+            //                ? `${options.schema}.${options.name}_temporal_history`
+            //                : `${options.name}_temporal_history`,
+            //           validFrom: "row_start",
+            //            validTo: "row_end",
+            //        }
+            //      } else {
+            //          this.versioning = options.versioning
+            //      }
+            //    }
         }
     }
 
